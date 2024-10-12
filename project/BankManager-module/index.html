@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BankManager Interaction</title>
+  <link rel="stylesheet" href="frontend.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>BankManager Interaction</h1>
+    
+    <h3>Get Contract Owner</h3>
+    <button onclick="getOwner()">Get Owner</button>
+    <div id="ownerOutput" class="output"></div>
+    
+    <hr>
+
+    <h3>Withdraw Ether</h3>
+    <div class="form-group">
+      <label for="recipientEth">Recipient Address:</label>
+      <input type="text" id="recipientEth" placeholder="Enter recipient address">
+    </div>
+    <div class="form-group">
+      <label for="amountEth">Amount (in ETH):</label>
+      <input type="number" id="amountEth" placeholder="Enter amount in Ether">
+    </div>
+    <button onclick="withdrawEther()">Withdraw Ether</button>
+    <div id="withdrawEthOutput" class="output"></div>
+
+    <hr>
+
+    <h3>Withdraw ERC20 Tokens</h3>
+    <div class="form-group">
+      <label for="tokenAddress">Token Address:</label>
+      <input type="text" id="tokenAddress" placeholder="Enter ERC20 token address">
+    </div>
+    <div class="form-group">
+      <label for="recipientERC20">Recipient Address:</label>
+      <input type="text" id="recipientERC20" placeholder="Enter recipient address">
+    </div>
+    <div class="form-group">
+      <label for="amountERC20">Amount:</label>
+      <input type="number" id="amountERC20" placeholder="Enter amount of tokens">
+    </div>
+    <button onclick="withdrawERC20()">Withdraw ERC20 Tokens</button>
+    <div id="withdrawERC20Output" class="output"></div>
+    
+    <hr>
+
+    <h3>Transfer NFT</h3>
+    <div class="form-group">
+      <label for="nftContract">NFT Contract Address:</label>
+      <input type="text" id="nftContract" placeholder="Enter NFT contract address">
+    </div>
+    <div class="form-group">
+      <label for="nftRecipient">Recipient Address:</label>
+      <input type="text" id="nftRecipient" placeholder="Enter recipient address">
+    </div>
+    <div class="form-group">
+      <label for="tokenId">Token ID:</label>
+      <input type="number" id="tokenId" placeholder="Enter token ID">
+    </div>
+    <button onclick="transferNFT()">Transfer NFT</button>
+    <div id="transferNFTOutput" class="output"></div>
+
+    <hr>
+
+    <div class="container mt-4">
+      <!-- Warning Heading -->
+      <h2 class="warning-heading">Warning!</h2>
+  
+      <!-- Warning Message -->
+      <div class="warning-message">
+        The following operations can break the application. Proceed with caution.
+      </div>
+    </div>
+    <h3>Transfer Ownership</h3>
+    <div class="form-group">
+      <label for="newOwner">New Owner Address:</label>
+      <input type="text" id="newOwner" placeholder="Enter new owner address">
+    </div>
+    <button onclick="transferOwnership()">Transfer Ownership</button>
+    <div id="transferOwnershipOutput" class="output"></div>
+    
+    <hr>
+
+    <div class="container mt-4">
+      <!-- Warning Heading -->
+      <h2 class="warning-heading">Warning!</h2>
+  
+      <!-- Warning Message -->
+      <div class="warning-message">
+        The following operations can break the application. Proceed with caution.
+      </div>
+    </div>
+
+    <h3>Renounce Ownership</h3>
+    <button onclick="renounceOwnership()" class="btn btn-danger btn-disabled" data-toggle="modal" data-target="#confirmModal" disabled>Renounce Ownership</button>
+    <div id="renounceOutput" class="output"></div>
+  </div>
+    <!-- Load config.js first -->
+    <script src="../config.js"></script>
+<script src="frontend.js"></script>
+</body>
+</html>
